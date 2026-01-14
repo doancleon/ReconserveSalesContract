@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sales Contract Confirmation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+
+  <h1 class="text-center">SALES CONTRACT CONFIRMATION</h1>
+</br>
+<div>
+  <strong>CONTRACT FORM:</strong><br><br>
+
+  This contract is made upon the terms and conditions as governed by the state of
+governed by the state of
+<span class="print-value" id="statePrint">New Jersey</span>
+<select class="no-print" id="stateSelect">
+  <option>Alabama</option>
+  <option>Arizona</option>
+  <option>California</option>
+  <option>Colorado</option>
+  <option>Georgia</option>
+  <option>Illinois</option>
+  <option>Indiana</option>
+  <option>Iowa</option>
+  <option>Kansas</option>
+  <option>Maryland</option>
+  <option>Michigan</option>
+  <option>Minnesota</option>
+  <option>Ohio</option>
+  <option selected>New Jersey</option>
+  <option>Tennessee</option>
+  <option>Texas</option>
+</select>
+
+  in contract form in force at the date of this contract, of which the parties admit they have knowledge and notice, and the details given below shall be taken as having been written into such contract form in the appropriate place.
+  Delivery and risk of loss are covered under Incoterms 2020.
+  Any special terms and conditions contained herein and/or attached hereto shall be treated as if written on such contract form and shall prevail in so far as they may be inconsistent with the printed clauses of such contract form.
+</div></br>
+<table class="table table-borderless">
+  <tr>
+    <td class="col-sm-2">
+      <strong>Sold To:
+<strong>
+  <span style="padding-left: 5px;" class="print-value" id="soldCompanyPrint"></span><br>
+  <span style="padding-left: 64px;" class="print-value" id="soldAddressPrint"></span><br>
+  <span style="padding-left: 64px;" class="print-value" id="soldCityPrint"></span>
+</strong>
+
+      </strong>
+    </td>
+
+    <td class="col-sm-10">
+
+      <!-- Company -->
+      <input
+        type="text"
+        class="form-control no-print"
+        placeholder="Company name"
+        id="soldCompanyInput">
+
+      <br>
+
+      <!-- Address -->
+      <input
+        type="text"
+        class="form-control no-print"
+        placeholder="Address line"
+        id="soldAddressInput">
+
+      <br>
+
+      <!-- City / State / ZIP -->
+      <input
+        type="text"
+        class="form-control no-print"
+        placeholder="City, State ZIP Code"
+        id="soldCityInput">
+
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p><strong>SELLER:</strong><br>
+        RECONSERVE OF NEW JERSEY, INC.<br>
+        1250 AMBOY AVE.<br>
+        PERTH AMBOY, NJ 08861<br>
+        Phone: 732-826-4240<br>
+        Fax: 732-826-5752
+      </p>
+    </div>
+
+    <div class="col-sm-6">
+      <p>
+        <strong>CONTRACT DATE:</strong> 1/15/2026<br>
+        <strong>SELLER CONTRACT NUMBER:</strong> 12345678<br>
+        <strong>BUYER CONTRACT NUMBER:</strong> 87654321
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p><strong>COMMODITY:</strong><br>
+        ReConserve DBP® (dried bakery product)
+      </p>
+    </div>
+
+    <div class="col-sm-6">
+      <p><strong>BUYER’S NAME:</strong><br>
+        Bob Buyer
+      </p>
+    </div>
+  </div>
+
+  <p><strong>PACKING:</strong></p>
+  <p style="margin-left:40px;">Bulk load in shipping containers</p>
+
+  <p><strong>QUANTITY:</strong></p>
+  <p style="margin-left:40px;">
+    25 loaded containers for about 700 short tons, truckloads to govern.
+  </p>
+
+  <p><strong>SHIPMENT PERIOD:</strong></p>
+  <p style="margin-left:40px;">
+    January 12, 2026 through January 30th 2026, scattered evenly at about 8 containers per week.
+  </p>
+
+  <p><strong>QUALITY:</strong></p>
+  <p style="margin-left:40px;">
+    On an as fed basis.<br>
+    PROTEIN: 9.0% Minimum<br>
+    CRUDE FAT: 6.0% Minimum<br>
+    FIBER: 6.0% Maximum
+  </p>
+
+  <p><strong>OTHER QUALITY:</strong></p>
+  <p style="margin-left:40px;">Free flow content box</p>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p><strong>PRICE:</strong><br>
+        $180 per short ton
+      </p>
+    </div>
+
+    <div class="col-sm-6">
+      <p><strong>PAYMENT TERMS:</strong><br>
+        NET DUE UPON RECEIPT OF INVOICE
+      </p>
+    </div>
+  </div>
+
+  <p><strong>DELIVERY BASIS:</strong></p>
+  <p style="margin-left:40px;">
+    Loaded container FOB ReConserve facility located at Perth Amboy, NJ
+  </p>
+
+  <p><strong>OTHER:</strong></p>
+  <p style="margin-left:40px;">
+    Commercial Invoice, unified bill of lading and certified scale ticket to be provided by Seller. Origin weights to govern. Product subject to this Contract is sold on the basis of being supply point specific, with a point of origin being ReConserve of <span class="state-print"></span>, Inc.
+  </p>
+
+  <p>
+    This Contract constitutes the complete agreement between the parties which cannot be changed in any manner except in a writing signed by Seller’s authorized agents. In case of any inconsistency between Seller’s and Buyer’s Contracts, Seller’s Contract to govern.
+  </p>
+
+  <p><strong>ASSIGNMENT CLAUSE:</strong></p>
+  <p style="margin-left:40px;">
+    Neither party may assign this Contract without the written consent of the other.
+  </p>
+
+  <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p>
+        Seller Signature:<br><br>
+        _____________________________<br>
+        Date: __________________
+      </p>
+    </div>
+
+    <div class="col-sm-6">
+      <p>
+        Buyer Signature:<br><br>
+        _____________________________<br>
+        Date: __________________
+      </p>
+    </div>
+  </div>
+
+  <br>
+
+  <p>
+    <span class="state-print"></span>, Inc.<br>
+    Hal Dillard<br>
+    hal.dillard@reconserve.com
+  </p>
+
+  <br>
+
+  <h3 class="text-center">Continuation of Sales Contract Confirmation Terms</h3>
+
+  <p>
+    Seller requests written acknowledgement of receipt of this Sales Contract Confirmation upon receipt. Please immediately sign and return one copy by mail or email. It is the Buyer’s duty to immediately notify Seller of any objections or disagreements with the stated terms or conditions. Otherwise, all of the terms and conditions are binding upon both parties.
+  </p>
+
+  <p>
+    The undersigned represents and warrants that he/she has been duly authorized to execute this confirmation on behalf of the Buyer to the terms stated in this Sales Contract Confirmation.
+  </p>
+
+  <p>
+    All decisions with respect to the extension or continuation of credit shall be at sole discretion of ReConserve of <span class="state-print"></span>, Inc and they may terminate or modify credit availability anytime at its sole discretion. The customer agrees to pay all expenses and fees including reasonable attorney fees for collection or enforcement thereof. Buyer understands and agree that payments are due upon Receipt of Invoice and further agrees to pay interest at the rate of 1.5% per month on any invoices not paid within thirty (30) days.
+  </p>
+
+  <p>
+    <strong>EXCLUSIVE REMEDIES OF BUYER:</strong>
+    The exclusive remedies of Buyer under this Contract are the return of the purchase price for the commodity purchased herein. Buyer agrees that Seller shall not be responsible for any incidental, consequential, punitive or other damages.
+  </p>
+
+</div>
+  </div>
+</div>
+</body>
+</html>

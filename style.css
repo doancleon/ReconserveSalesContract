@@ -3187,3 +3187,27 @@ textarea.input-lg,select[multiple].input-lg {
 .affix {
     position: fixed
 }
+
+@media screen {
+  .print-value {
+    display: none;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media print {
+  .sold-to-text {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .row, [class*="col-"] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
