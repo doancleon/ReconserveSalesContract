@@ -3188,6 +3188,35 @@ textarea.input-lg,select[multiple].input-lg {
     position: fixed
 }
 
+#statePrint { 
+  display: none;
+}
+@media print {
+  /* Hide the dropdown in print */
+  #stateSelect,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show the state text in print */
+  #statePrint {
+    display: inline !important;
+  }
+}
+
+.page-break {
+  border-top: 2px dashed #999;
+  margin: 40px 0;
+}
+
+@media print {
+  .page-break {
+    border: none;
+    break-before: page;
+  }
+}
+
+
 @media screen {
   .print-value {
     display: none;
@@ -3210,4 +3239,46 @@ textarea.input-lg,select[multiple].input-lg {
     margin-left: 0 !important;
     padding-left: 0 !important;
   }
+}
+
+@media print {
+  .row {
+    display: flex !important;
+  }
+
+  .row > [class*="col-"] {
+    float: none !important;
+  }
+}
+
+@media print {
+  .align-right {
+    margin-left: auto !important;
+    text-align: right;
+  }
+}
+
+@media print {
+  .label,
+  .value {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.label {
+  width: 160px;   /* controls label column */
+  margin-right: 8px;
+}
+
+.field-row input {
+  flex: 1;
 }

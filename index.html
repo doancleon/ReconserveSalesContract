@@ -15,7 +15,7 @@
     <div class="col-sm-10 col-sm-offset-1">
 
   <h1 class="text-center">SALES CONTRACT CONFIRMATION</h1>
-</br>
+<br>
 <div>
   <strong>CONTRACT FORM:</strong><br><br>
 
@@ -44,7 +44,7 @@ governed by the state of
   in contract form in force at the date of this contract, of which the parties admit they have knowledge and notice, and the details given below shall be taken as having been written into such contract form in the appropriate place.
   Delivery and risk of loss are covered under Incoterms 2020.
   Any special terms and conditions contained herein and/or attached hereto shall be treated as if written on such contract form and shall prevail in so far as they may be inconsistent with the printed clauses of such contract form.
-</div></br>
+</div><br>
 <table class="table table-borderless">
   <tr>
     <td class="col-sm-2">
@@ -90,42 +90,84 @@ governed by the state of
 </table>
 
 
+      <!-- Seller and Contract Date -->
 
 
 
-  <div class="row">
-    <div class="col-sm-6">
-      <p><strong>SELLER:</strong><br>
-        RECONSERVE OF NEW JERSEY, INC.<br>
-        1250 AMBOY AVE.<br>
-        PERTH AMBOY, NJ 08861<br>
-        Phone: 732-826-4240<br>
-        Fax: 732-826-5752
-      </p>
-    </div>
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      <strong>SELLER:</strong><br>
 
-    <div class="col-sm-6">
-      <p>
-        <strong>CONTRACT DATE:</strong> 1/15/2026<br>
-        <strong>SELLER CONTRACT NUMBER:</strong> 12345678<br>
-        <strong>BUYER CONTRACT NUMBER:</strong> 87654321
-      </p>
-    </div>
+      <!-- State selector (screen only) -->
+      <select
+        id="sellerStateSelect"
+        class="form-control no-print"
+        style="display:inline-block; width:auto; margin-bottom:6px;"
+      >
+        <option value="AL">Alabama</option>
+        <option value="AZ">Arizona</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="GA">Georgia</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="MD">Maryland</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="NJ" selected>New Jersey</option>
+        <option value="OH">Ohio</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+      </select>
+
+      <!-- Print state -->
+      <span class="print-value" id="sellerStatePrint"></span><br>
+
+      <!-- Seller details -->
+      <span id="sellerCompany"></span><br>
+      <span id="sellerStreet"></span><br>
+      <span id="sellerCityStateZip"></span><br>
+      Phone: <span id="sellerPhone"></span><br>
+      Fax: <span id="sellerFax"></span>
+    </p>
   </div>
 
-  <div class="row">
-    <div class="col-sm-6">
-      <p><strong>COMMODITY:</strong><br>
-        ReConserve DBP® (dried bakery product)
-      </p>
-    </div>
 
-    <div class="col-sm-6">
-      <p><strong>BUYER’S NAME:</strong><br>
-        Bob Buyer
-      </p>
-    </div>
+<div class="col-sm-6 align-right">
+
+  <div class="field-row">
+    <label for="contractDate" class="label">CONTRACT DATE:</label>
+    <span class="print-value" id="contractDatePrint"></span>
+    <input id="contractDate" type="text" class="form-control no-print">
   </div>
+
+  <div class="field-row">
+    <label for="sellerContractNumber" class="label">SELLER CONTRACT NUMBER:</label>
+    <span class="print-value" id="sellerContractNumberPrint"></span>
+    <input id="sellerContractNumber" type="text" class="form-control no-print">
+  </div>
+
+  <div class="field-row">
+    <label for="buyerContractNumber" class="label">BUYER CONTRACT NUMBER:</label>
+    <span class="print-value" id="buyerContractNumberPrint"></span>
+    <input id="buyerContractNumber" type="text" class="form-control no-print">
+  </div>
+
+  <div class="field-row">
+    <label for="buyerName" class="label">BUYER’S NAME:</label>
+    <span class="print-value" id="buyerNamePrint"></span>
+    <input id="buyerName" type="text" class="form-control no-print">
+
+
+</div>
+</div>
+</div>
+  
+  <p><strong>COMMODITY:</strong></p>
+  <p style="margin-left:40px;">z</p>
 
   <p><strong>PACKING:</strong></p>
   <p style="margin-left:40px;">Bulk load in shipping containers</p>
@@ -189,8 +231,10 @@ governed by the state of
   <div class="row">
     <div class="col-sm-6">
       <p>
-        Seller Signature:<br><br>
-        _____________________________<br>
+        Seller Signature: <br>
+    Reconserve of <span class="state-print"></span>, Inc.
+  </p><br>
+        __________________________________<br><br>
         Date: __________________
       </p>
     </div>
@@ -204,15 +248,7 @@ governed by the state of
     </div>
   </div>
 
-  <br>
-
-  <p>
-    <span class="state-print"></span>, Inc.<br>
-    Hal Dillard<br>
-    hal.dillard@reconserve.com
-  </p>
-
-  <br>
+<div class="page-break"></div>
 
   <h3 class="text-center">Continuation of Sales Contract Confirmation Terms</h3>
 
