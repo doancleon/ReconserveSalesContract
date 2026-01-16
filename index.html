@@ -13,15 +13,17 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
+<button type="button" class="btn btn-primary no-print print-btn" onclick="window.print()">
+  Print Contract
+</button>
 
   <h1 class="text-center">SALES CONTRACT CONFIRMATION</h1>
-<br>
 <div>
-  <strong>CONTRACT FORM:</strong><br><br>
+  <strong>CONTRACT FORM:</strong>
 
   This contract is made upon the terms and conditions as governed by the state of
 governed by the state of
-<span class="print-value" id="statePrint">New Jersey</span>
+<span class="print-value" id="statePrint"></span>
 <select class="no-print" id="stateSelect">
   <option>Alabama</option>
   <option>Arizona</option>
@@ -48,58 +50,46 @@ governed by the state of
 <table class="table table-borderless">
   <tr>
     <td class="col-sm-2">
-      <strong>Sold To:
-<strong>
-  <span style="padding-left: 5px;" class="print-value" id="soldCompanyPrint"></span><br>
-  <span style="padding-left: 64px;" class="print-value" id="soldAddressPrint"></span><br>
-  <span style="padding-left: 64px;" class="print-value" id="soldCityPrint"></span>
-</strong>
-
-      </strong>
+      <strong>Sold To:</strong>
+      <div>
+        <strong>
+          <span style="padding-left: 64px;" class="print-value" id="soldCompanyPrint"></span><br>
+          <span style="padding-left: 64px;" class="print-value" id="soldAddressPrint"></span><br>
+          <span style="padding-left: 64px;" class="print-value" id="soldCityPrint"></span>
+        </strong>
+      </div>
     </td>
 
     <td class="col-sm-10">
-
-      <!-- Company -->
       <input
         type="text"
         class="form-control no-print"
         placeholder="Company name"
         id="soldCompanyInput">
-
       <br>
 
-      <!-- Address -->
       <input
         type="text"
         class="form-control no-print"
         placeholder="Address line"
         id="soldAddressInput">
-
       <br>
 
-      <!-- City / State / ZIP -->
       <input
         type="text"
         class="form-control no-print"
         placeholder="City, State ZIP Code"
         id="soldCityInput">
-
     </td>
   </tr>
 </table>
 
-
-      <!-- Seller and Contract Date -->
-
-
-
 <div class="row">
+  <!-- Seller -->
   <div class="col-sm-6">
     <p>
       <strong>SELLER:</strong><br>
 
-      <!-- State selector (screen only) -->
       <select
         id="sellerStateSelect"
         class="form-control no-print"
@@ -107,7 +97,11 @@ governed by the state of
       >
         <option value="AL">Alabama</option>
         <option value="AZ">Arizona</option>
-        <option value="CA">California</option>
+
+        <option value="CA-ONT">California – Ontario</option>
+        <option value="CA-LA">California – Los Angeles</option>
+        <option value="CA-STK">California – Stockton</option>
+
         <option value="CO">Colorado</option>
         <option value="GA">Georgia</option>
         <option value="IL">Illinois</option>
@@ -123,151 +117,265 @@ governed by the state of
         <option value="TX">Texas</option>
       </select>
 
-      <!-- Print state -->
-      <span class="print-value" id="sellerStatePrint"></span><br>
+      <br>
 
-      <!-- Seller details -->
       <span id="sellerCompany"></span><br>
       <span id="sellerStreet"></span><br>
       <span id="sellerCityStateZip"></span><br>
       Phone: <span id="sellerPhone"></span><br>
-      Fax: <span id="sellerFax"></span>
+
+      <span id="sellerFaxLine">
+        Fax: <span id="sellerFax"></span><br>
+      </span>
     </p>
   </div>
 
-
-<div class="col-sm-6 align-right">
-
-  <div class="field-row">
-    <label for="contractDate" class="label">CONTRACT DATE:</label>
-    <span class="print-value" id="contractDatePrint"></span>
-    <input id="contractDate" type="text" class="form-control no-print">
-  </div>
-
-  <div class="field-row">
-    <label for="sellerContractNumber" class="label">SELLER CONTRACT NUMBER:</label>
-    <span class="print-value" id="sellerContractNumberPrint"></span>
-    <input id="sellerContractNumber" type="text" class="form-control no-print">
-  </div>
-
-  <div class="field-row">
-    <label for="buyerContractNumber" class="label">BUYER CONTRACT NUMBER:</label>
-    <span class="print-value" id="buyerContractNumberPrint"></span>
-    <input id="buyerContractNumber" type="text" class="form-control no-print">
-  </div>
-
-  <div class="field-row">
-    <label for="buyerName" class="label">BUYER’S NAME:</label>
-    <span class="print-value" id="buyerNamePrint"></span>
-    <input id="buyerName" type="text" class="form-control no-print">
-
-
-</div>
-</div>
-</div>
-  
-  <p><strong>COMMODITY:</strong></p>
-  <p style="margin-left:40px;">z</p>
-
-  <p><strong>PACKING:</strong></p>
-  <p style="margin-left:40px;">Bulk load in shipping containers</p>
-
-  <p><strong>QUANTITY:</strong></p>
-  <p style="margin-left:40px;">
-    25 loaded containers for about 700 short tons, truckloads to govern.
-  </p>
-
-  <p><strong>SHIPMENT PERIOD:</strong></p>
-  <p style="margin-left:40px;">
-    January 12, 2026 through January 30th 2026, scattered evenly at about 8 containers per week.
-  </p>
-
-  <p><strong>QUALITY:</strong></p>
-  <p style="margin-left:40px;">
-    On an as fed basis.<br>
-    PROTEIN: 9.0% Minimum<br>
-    CRUDE FAT: 6.0% Minimum<br>
-    FIBER: 6.0% Maximum
-  </p>
-
-  <p><strong>OTHER QUALITY:</strong></p>
-  <p style="margin-left:40px;">Free flow content box</p>
-
-  <div class="row">
-    <div class="col-sm-6">
-      <p><strong>PRICE:</strong><br>
-        $180 per short ton
-      </p>
+  <!-- Contract fields -->
+  <div class="col-sm-6 align-right">
+    <div class="field-row">
+      <label for="contractDate" class="label">CONTRACT DATE:</label>
+      <span class="print-value" id="contractDatePrint"></span>
+      <input id="contractDate" type="text" class="form-control no-print">
     </div>
 
-    <div class="col-sm-6">
-      <p><strong>PAYMENT TERMS:</strong><br>
-        NET DUE UPON RECEIPT OF INVOICE
-      </p>
+    <div class="field-row">
+      <label for="sellerContractNumber" class="label">SELLER CONTRACT NUMBER:</label>
+      <span class="print-value" id="sellerContractNumberPrint"></span>
+      <input id="sellerContractNumber" type="text" class="form-control no-print">
+    </div>
+
+    <div class="field-row">
+      <label for="buyerContractNumber" class="label">BUYER CONTRACT NUMBER:</label>
+      <span class="print-value" id="buyerContractNumberPrint"></span>
+      <input id="buyerContractNumber" type="text" class="form-control no-print">
     </div>
   </div>
+</div>
 
-  <p><strong>DELIVERY BASIS:</strong></p>
-  <p style="margin-left:40px;">
-    Loaded container FOB ReConserve facility located at Perth Amboy, NJ
-  </p>
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      <strong>COMMODITY:</strong>
+      <span class="print-value" id="commodityPrint"></span>
+      <input
+        type="text"
+        id="commodity"
+        class="form-control no-print d-inline-block"
+        style="width:70%; margin-left:10px;"
+        placeholder="e.g., ReConserve DBP® (dried bakery product)">
+    </p>
+  </div>
 
-  <p><strong>OTHER:</strong></p>
-  <p style="margin-left:40px;">
-    Commercial Invoice, unified bill of lading and certified scale ticket to be provided by Seller. Origin weights to govern. Product subject to this Contract is sold on the basis of being supply point specific, with a point of origin being ReConserve of <span class="state-print"></span>, Inc.
-  </p>
+  <div class="col-sm-6 align-right">
+    <div class="field-row">
+      <label for="buyerName" class="label">BUYER’S NAME:</label>
+      <span class="print-value" id="buyerNamePrint"></span>
+      <input id="buyerName" type="text" class="form-control no-print">
+    </div>
+  </div>
+</div>
 
+<p>
+  <strong>PACKING:</strong>
+  <span class="print-value" id="packingPrint"></span>
+  <input
+    type="text"
+    id="packing"
+    class="form-control no-print d-inline-block"
+    style="width:70%; margin-left:10px;"
+    placeholder="e.g., Bulk load in shipping containers">
+</p>
+
+<p>
+  <strong>QUANTITY:</strong>
+  <span class="print-value" id="quantityPrint"></span>
+  <input
+    type="text"
+    id="quantity"
+    class="form-control no-print d-inline-block"
+    style="width:70%; margin-left:10px;"
+    placeholder="e.g., 25 loaded containers for about 700 short tons, truckloads to govern.">
+</p>
+
+<p>
+  <strong>SHIPMENT PERIOD:</strong>
+  <span class="print-value" id="shipmentPeriodPrint"></span>
+  <input
+    type="text"
+    id="shipmentPeriod"
+    class="form-control no-print d-inline-block"
+    style="width:70%; margin-left:10px;"
+    placeholder="e.g., January 12, 2026 through January 30th 2026, scattered evenly at about 8 containers per week.">
+</p>
+
+
+<p>
+  <strong>QUALITY:</strong>
+  On an as fed basis.
+</p>
+
+<p style="margin-left:40px;">
+  PROTEIN:
+  <span class="print-value" id="proteinPrint"></span>
+  <input
+    type="number"
+    step="0.1"
+    id="proteinInput"
+    class="quality-input no-print"
+    value="9.0">% Minimum<br>
+
+  CRUDE FAT:
+  <span class="print-value" id="fatPrint"></span>
+  <input
+    type="number"
+    step="0.1"
+    id="fatInput"
+    class="quality-input no-print"
+    value="6.0">% Minimum<br>
+
+  FIBER:
+  <span class="print-value" id="fiberPrint"></span>
+  <input
+    type="number"
+    step="0.1"
+    id="fiberInput"
+    class="quality-input no-print"
+    value="6.0">% Maximum
+</p>
+
+
+
+<p>
+  <strong>OTHER QUALITY:</strong>
+  <span class="print-value" id="otherQualityPrint"></span>
+  <input
+    type="text"
+    id="otherQuality"
+    class="form-control no-print d-inline-block"
+    style="width:70%; margin-left:10px;">
+</p>
+
+
+<div class="row keep-split">
+<div class="col-sm-6">
   <p>
-    This Contract constitutes the complete agreement between the parties which cannot be changed in any manner except in a writing signed by Seller’s authorized agents. In case of any inconsistency between Seller’s and Buyer’s Contracts, Seller’s Contract to govern.
+    <strong>PRICE:</strong>
+    <span class="print-value" id="pricePrint"></span>
+    <input
+      type="text"
+      id="priceInput"
+      class="form-control no-print d-inline-block"
+      style="width:70%; margin-left:10px;"
+      placeholder="e.g., $180 per short ton">
   </p>
 
-  <p><strong>ASSIGNMENT CLAUSE:</strong></p>
-  <p style="margin-left:40px;">
-    Neither party may assign this Contract without the written consent of the other.
+  </div>
+
+<div class="col-sm-6">
+  <p>
+    <strong>PAYMENT TERMS:</strong>
+    NET DUE UPON RECEIPT OF INVOICE
   </p>
+</div>
+
+</div>
+
+
+
+<p>
+  <strong>DELIVERY BASIS:</strong>
+  Loaded container FOB ReConserve facility located at
+  <span id="deliveryBasisPrint"></span>
+</p>
+
+
+
+
+<p>
+  <strong>OTHER:</strong>
+  Commercial Invoice, unified bill of lading and certified scale ticket to be provided by Seller.
+  Origin weights to govern. Product subject to this Contract is sold on the basis of being supply
+  point specific, with a point of origin being ReConserve of
+  <span class="state-print"></span>, Inc.
+</p>
+
+<p>
+  This Contract constitutes the complete agreement between the parties which cannot be changed
+  in any manner except in a writing signed by Seller’s authorized agents. In case of any inconsistency
+  between Seller’s and Buyer’s Contracts, Seller’s Contract to govern.
+</p>
+
+
+<p>
+  <strong>ASSIGNMENT CLAUSE:</strong>
+  Neither party may assign this Contract without the written consent of the other.
+</p>
+
 
   <br>
 
-  <div class="row">
-    <div class="col-sm-6">
-      <p>
-        Seller Signature: <br>
-    Reconserve of <span class="state-print"></span>, Inc.
-  </p><br>
-        __________________________________<br><br>
-        Date: __________________
-      </p>
-    </div>
+<div class="row">
+  <div class="col-sm-6">
+    <p>
+      Seller Signature:<br>
+      Reconserve of <span class="state-print"></span>, Inc.
+    </p><br>
 
-    <div class="col-sm-6">
-      <p>
-        Buyer Signature:<br><br>
-        _____________________________<br>
-        Date: __________________
-      </p>
-    </div>
+    <p style="white-space: nowrap;">
+      __________________________ Date: __________________
+    </p>
   </div>
+
+  <div class="col-sm-6">
+    <p>
+      Buyer Signature:<br><br>
+    </p><br>
+
+    <p style="white-space: nowrap;">
+      __________________________ Date: ____________________
+    </p>
+  </div>
+</div>
+
 
 <div class="page-break"></div>
 
   <h3 class="text-center">Continuation of Sales Contract Confirmation Terms</h3>
 
-  <p>
-    Seller requests written acknowledgement of receipt of this Sales Contract Confirmation upon receipt. Please immediately sign and return one copy by mail or email. It is the Buyer’s duty to immediately notify Seller of any objections or disagreements with the stated terms or conditions. Otherwise, all of the terms and conditions are binding upon both parties.
-  </p>
+<p>
+  Seller requests written acknowledgement of receipt of this Sales Contract Confirmation upon receipt.
+  Please immediately sign and return one copy by mail or email. It is the Buyer’s duty to immediately
+  notify Seller of any objections or disagreements with the stated terms or conditions. Otherwise,
+  all of the terms and conditions are binding upon both parties.
+</p>
 
-  <p>
-    The undersigned represents and warrants that he/she has been duly authorized to execute this confirmation on behalf of the Buyer to the terms stated in this Sales Contract Confirmation.
-  </p>
+<p>
+  The undersigned represents and warrants that he/she has been duly authorized to execute this
+  confirmation on behalf of the Buyer to the terms stated in this Sales Contract Confirmation.
+</p>
 
-  <p>
-    All decisions with respect to the extension or continuation of credit shall be at sole discretion of ReConserve of <span class="state-print"></span>, Inc and they may terminate or modify credit availability anytime at its sole discretion. The customer agrees to pay all expenses and fees including reasonable attorney fees for collection or enforcement thereof. Buyer understands and agree that payments are due upon Receipt of Invoice and further agrees to pay interest at the rate of 1.5% per month on any invoices not paid within thirty (30) days.
-  </p>
+<p>
+  All decisions with respect to the extension or continuation of credit shall be at sole discretion of
+  ReConserve of <span class="state-print"></span>, Inc and they may terminate or modify credit availability anytime
+  at its sole discretion. The customer agrees to pay all expenses and fees including reasonable attorney
+  fees for collection or enforcement thereof. Buyer understands and agree that payments are due upon
+  Receipt of Invoice and further agrees to pay interest at the rate of 1.5% per month on any invoices
+  not paid within thirty (30) days. Buyer understands and agrees that invoices will not be discounted
+  unless agreed to separately in writing and signed by an officer of ReConserve of
+  <span class="state-print"></span>, Inc.
+  No shipments will be made to customers who are over their credit limit. Customers over their credit
+  limit must rectify the situation prior to further shipments or have an approved plan of action to be
+  in compliance. This plan must be approved by an officer of ReConserve of
+  <span class="state-print"></span>.
+</p>
 
-  <p>
-    <strong>EXCLUSIVE REMEDIES OF BUYER:</strong>
-    The exclusive remedies of Buyer under this Contract are the return of the purchase price for the commodity purchased herein. Buyer agrees that Seller shall not be responsible for any incidental, consequential, punitive or other damages.
-  </p>
+<p>
+  <strong>EXCLUSIVE REMEDIES OF BUYER:</strong>
+  The exclusive remedies of Buyer under this Contract are the return of the purchase price for the
+  commodity purchased herein. Buyer agrees that Seller shall not be responsible for any incidental,
+  consequential, punitive or other damages.
+</p>
+
 
 </div>
   </div>

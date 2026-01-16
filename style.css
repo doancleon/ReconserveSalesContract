@@ -3188,21 +3188,24 @@ textarea.input-lg,select[multiple].input-lg {
     position: fixed
 }
 
-#statePrint { 
+/* hide on screen */
+#statePrint {
   display: none;
 }
+
 @media print {
-  /* Hide the dropdown in print */
+  /* show on print */
+  #statePrint {
+    display: inline !important;
+  }
+
+  /* hide dropdown */
   #stateSelect,
   .no-print {
     display: none !important;
   }
-
-  /* Show the state text in print */
-  #statePrint {
-    display: inline !important;
-  }
 }
+
 
 .page-break {
   border-top: 2px dashed #999;
@@ -3282,3 +3285,27 @@ textarea.input-lg,select[multiple].input-lg {
 .field-row input {
   flex: 1;
 }
+
+.quality-input {
+  width: 70px;
+  display: inline-block;
+}
+
+@media print {
+  .keep-split {
+    display: flex !important;
+  }
+
+  .keep-split > .col-sm-6 {
+    width: 50% !important;
+  }
+}
+
+.print-btn{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+}
+
+
